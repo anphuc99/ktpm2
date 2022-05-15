@@ -22,7 +22,9 @@ export class CheckoutComponent implements OnInit {
     note: null,
   }
   sum:any
-  constructor(private titleService:Title, private httpClient:HttpClient, private router: Router) { }
+  constructor(private titleService:Title, private httpClient:HttpClient, private router: Router) {
+    this.titleService.setTitle("checkout");
+  }
 
   ngOnInit(): void {
     $("#preloader").css({opacity: 1, visibility: "unset", display: "unset"})

@@ -13,7 +13,9 @@ declare const ready: any
 export class CartShoppingComponent implements OnInit {
   page = "cart"
   cart:any
-  constructor(private titleService:Title, private httpClient:HttpClient) { }
+  constructor(private titleService:Title, private httpClient:HttpClient) {
+    this.titleService.setTitle("Cart");
+  }
 
   ngOnInit(): void {
     $("#preloader").css({opacity: 1, visibility: "unset", display: "unset"})

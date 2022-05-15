@@ -1,4 +1,4 @@
-const URL = "http://127.0.0.1:8000/api/"
+const URL = "https://fashion.api.devmini.com/api/"
 
 const GET = (url = "/",params: any = "") => URL + url + "?" + new URLSearchParams(params).toString();
 declare const $: any;

@@ -17,7 +17,6 @@ export class DetailProductComponent implements OnInit {
   title: any
   detail: any
   constructor(private titleService:Title,private route: ActivatedRoute, private httpClient:HttpClient) {
-    this.titleService.setTitle("detail");
   }
 
   ngOnInit(): void {
@@ -26,6 +25,7 @@ export class DetailProductComponent implements OnInit {
     this.httpClient.get(API_URL.GET("detail/"+id)).subscribe((data: any)=>{
       data.price = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(data.price)
       data.discount = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(data.discount)
+      this.titleService.setTitle(data.title);
       this.detail = data
       ready()
     })
