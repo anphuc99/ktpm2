@@ -17,7 +17,11 @@ export class CartShoppingComponent implements OnInit {
 
   ngOnInit(): void {
     $("#preloader").css({opacity: 1, visibility: "unset", display: "unset"})
-    let cart = JSON.parse(Gol.getCookie("cart"))
+    let cookie = Gol.getCookie("cart")
+    if(cookie == ""){
+      cookie = "[]"
+    }
+    let cart = JSON.parse(cookie)
     this.httpClient.post(API_URL.GET("getCart"),{cart: cart}).subscribe((data)=>{
       this.cart = data
       console.log(data)
