@@ -8,6 +8,11 @@ import { IndexComponent } from './index/index.component';
 import { ProductsComponent } from './products/products.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { DetailProductComponent } from './detail-product/detail-product.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CartShoppingComponent } from './cart-shopping/cart-shopping.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +21,16 @@ import { ContactComponent } from './contact/contact.component';
     IndexComponent,
     ProductsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    DetailProductComponent,
+    CartShoppingComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

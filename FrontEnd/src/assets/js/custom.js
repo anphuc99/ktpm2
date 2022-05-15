@@ -1,3 +1,4 @@
+var $grid
 function ready() {
   $(function () {
     $("#tabs").tabs();
@@ -134,7 +135,7 @@ function ready() {
     nextArrow: '<button class="NextArrow"></button>',
   });
 
-  $(".filters ul li").click(function () {
+  $(".filterswwww ul li").click(function () {
     $(".filters ul li").removeClass("active");
     $(this).addClass("active");
 
@@ -144,7 +145,7 @@ function ready() {
     });
   });
 
-  var $grid = $(".grid").isotope({
+  $grid = $(".grid").isotope({
     itemSelector: ".all",
     percentPosition: true,
     masonry: {

@@ -1,0 +1,64 @@
+<div id="container">
+
+  <!-- Start  Product details -->
+  <div class="product-details">
+
+    <!--  Product Name -->
+    <h1>{{detail.title}}</h1>
+    <!--    <span class="hint new">New</span> -->
+    <!--    <span class="hint free-shipping">Free Shipping</span> -->
+    <!--    the Product rating -->
+    <span class="hint-star star">
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star-half-o" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+    </span>
+
+
+    <!-- The most important information about the product -->
+    <p class="information">{{detail.summary}}</p>
+
+
+
+    <!--    Control -->
+    <div class="control">
+
+      <p class="price" style="text-decoration-line: line-through;">${{detail.price}}</p>
+      <!-- Start Button buying -->
+      <button class="btn">
+        <!--    the Price -->
+        <span class="price">${{detail.discount}}</span>
+        <!--    shopping cart icon-->
+        <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+        <!--    Buy Now / ADD to Cart-->
+        <span class="buy" (click)="addToCart(detail.id)">Buy now</span>
+      </button>
+      <!-- End Button buying -->
+
+    </div>
+
+  </div>
+
+  <!--  End Product details   -->
+
+
+
+  <!--  Start product image & Information -->
+
+  <div class="product-image">
+
+    <img src="{{detail.img}}"
+      alt="{{detail.title}}">
+
+    <!--  product Information-->
+    <div class="info">
+      <h2>Desciption</h2>
+      <span [innerHTML]="detail.desciption"></span>
+    </div>
+  </div>
+  <!--  End product image  -->
+
+
+</div>

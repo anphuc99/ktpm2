@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import G from "../GolValiable"
 declare const cleared: any;
 declare const $: any;
 @Component({
@@ -12,6 +13,7 @@ export class LayoutPageComponent implements OnInit {
   ProductPage: string = ""
   AboutPage: string = ""
   ContactPage: string = ""
+  CartPage: string = ""
 
   constructor() { }
 
@@ -32,18 +34,40 @@ export class LayoutPageComponent implements OnInit {
     this.ProductPage = ""
     this.AboutPage = ""
     this.ContactPage = ""
-    switch(cpm.page){
+    this.CartPage = ""
+    switch (cpm.page) {
       case "index":
         this.HomePage = "active"
+        $("header").removeClass("no-header")
+        G.initProducPage = false
         break
       case "product":
         this.ProductPage = "active"
+        $("header").removeClass("no-header")
         break
       case "about":
         this.AboutPage = "active"
+        $("header").removeClass("no-header")
+        G.initProducPage = false
         break
       case "contact":
         this.ContactPage = "active"
+        $("header").removeClass("no-header")
+        G.initProducPage = false
+        break
+      case "detail":
+        $("header").addClass("no-header")
+        G.initProducPage = false
+        break
+      case "cart":
+        $("header").addClass("no-header")
+        G.initProducPage = false
+        this.CartPage = "active"
+        break
+      case "checkout":
+        $("header").addClass("no-header")
+        G.initProducPage = false
+        this.CartPage = "active"
         break
     }
   }

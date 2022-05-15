@@ -1058,3 +1058,7 @@ footer .inner-content p a {
 		bottom: 0;
 	}
 }
+
+.no-header {
+	position: unset;
+}

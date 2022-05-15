@@ -1,0 +1,51 @@
+<ng-container *ngIf="cart != null">
+  <div class="container">
+    <section id="cart">
+      <article *ngFor="let item of cart;let indexOfelement=index;" class="product">
+        <header>
+          <a class="remove">
+            <img src="{{item.img}}" alt="">
+
+            <h3 (click)="removeProduct(indexOfelement)">Remove product</h3>
+          </a>
+        </header>
+
+        <div class="content">
+
+          <h1>{{item.title}}</h1>
+
+          {{item.summary}}
+
+          <div title="You have selected this product to be shipped in the color yellow." style="top: 0" class="color yellow"></div>
+        </div>
+
+        <footer class="content">
+          <span class="qt-minus" (click)="decrease(indexOfelement)">-</span>
+          <span class="qt">{{item.amount}}</span>
+          <span class="qt-plus" (click)="increase(indexOfelement)">+</span>
+
+          <h2 class="full-price">
+            ${{item.price*item.amount}}
+          </h2>
+
+          <h2 class="price">
+            ${{item.price}}
+          </h2>
+        </footer>
+      </article>
+      <article  *ngIf="cart.length >0" class="product" style="height: unset;">
+        <header style="background-color: unset; height: unset;">
+          <button class="snip1547 hover" [routerLink]="['/checkout']" ><span>Checkout</span></button>
+        </header>
+
+        <footer class="content">
+          <h1 class="qt">TOTAL</h1>
+          <h2 class="full-price">
+            ${{total()}}
+          </h2>
+
+        </footer>
+      </article>
+    </section>
+  </div>
+</ng-container>
